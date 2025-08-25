@@ -4,8 +4,187 @@
   <meta charset="UTF-8" />
   <title>Basketball Theme (Raw Nested)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', -apple-system, system-ui, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #ff6b00 0%, #ff8f00 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .hero-content {
+      text-align: center;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      text-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+      background: linear-gradient(45deg, #ffffff 0%, #f0f0f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .basketball-icon {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #d2691e, #8b4513);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      animation: bounce 2s ease-in-out infinite;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(-60%) translateX(-10px); }
+    }
+    
+    .content-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin: 60px 0;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,107,0,0.3);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+      border-color: #ff6b00;
+      background: rgba(255,107,0,0.1);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #ff6b00;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+    }
+    
+    .theme-note {
+      background: rgba(0,0,0,0.3);
+      border-left: 4px solid #ff6b00;
+      padding: 20px;
+      margin: 40px 0;
+      font-style: italic;
+      opacity: 0.7;
+    }
+    
+    .brutalist-text {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      margin: 40px 0;
+      color: #ff6b00;
+    }
+  </style>
 </head>
 <body>
-<p>Placeholder basketball raw (nested). Replace with real markup.</p>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Basketball</h1>
+      <div class="hero-subtitle">Raw Theme Preview</div>
+    </div>
+    <div class="basketball-icon">🏀</div>
+  </div>
+  
+  <div class="content-section">
+    <div class="brutalist-text">
+      High-Impact Sports Design
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">01</div>
+        <div class="stat-label">Theme Version</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Responsive</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4K</div>
+        <div class="stat-label">Ultra HD Ready</div>
+      </div>
+    </div>
+    
+    <div class="theme-note">
+      <strong>CURATIONS Theme System:</strong> This basketball theme demonstrates the brutalist-editorial design approach with Poppins typography, high contrast elements, and bold visual choices. Built for maximum impact and modern web standards.
+    </div>
+  </div>
 </body>
 </html>
