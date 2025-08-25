@@ -4,8 +4,71 @@
   <meta charset="UTF-8" />
   <title>Basketball Theme (Raw Nested)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #ff6b35;
+      font-family: 'Courier New', monospace;
+      line-height: 1.4;
+    }
+    .court {
+      border: 3px solid #ff6b35;
+      padding: 30px;
+      margin: 20px 0;
+      background: #2d2d2d;
+    }
+    .score {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .player {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #ff6b35;
+      background: #333;
+    }
+    .stats {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-<p>Placeholder basketball raw (nested). Replace with real markup.</p>
+  <h1>🏀 BASKETBALL THEME - RAW</h1>
+  
+  <div class="court">
+    <div class="score">LAKERS 98 - 94 CELTICS</div>
+    
+    <h2>STARTING LINEUP</h2>
+    <div class="player">
+      #23 JAMES<br>
+      <span class="stats">27 PTS | 8 REB | 11 AST</span>
+    </div>
+    <div class="player">
+      #3 DAVIS<br>
+      <span class="stats">31 PTS | 12 REB | 3 BLK</span>
+    </div>
+    <div class="player">
+      #15 RUSSELL<br>
+      <span class="stats">12 PTS | 4 AST | 2 STL</span>
+    </div>
+    
+    <h2>GAME STATUS</h2>
+    <p>FINAL - 4TH QUARTER</p>
+    <p>ARENA: CRYPTO.COM ARENA</p>
+    <p>ATTENDANCE: 20,000</p>
+    
+    <h2>NEXT GAMES</h2>
+    <ul>
+      <li>vs WARRIORS - FRI 8:00 PM</li>
+      <li>@ NUGGETS - SUN 6:00 PM</li>
+      <li>vs CLIPPERS - TUE 7:30 PM</li>
+    </ul>
+  </div>
 </body>
 </html>
