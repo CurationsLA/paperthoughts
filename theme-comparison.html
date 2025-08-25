@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURATIONS - Theme Analysis Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+            overflow-x: auto;
+        }
+        
+        .header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            font-size: 12px;
+            opacity: 0.8;
+            font-family: monospace;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: #222;
+            padding: 2px;
+            min-height: 100vh;
+        }
+        
+        .theme-frame {
+            background: #111;
+            position: relative;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        
+        .theme-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #444;
+        }
+        
+        .theme-label h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .theme-label .filename {
+            font-size: 11px;
+            color: #666;
+            font-family: monospace;
+        }
+        
+        .theme-label .status {
+            font-size: 10px;
+            color: #f39c12;
+            margin-top: 5px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #fff;
+            min-height: 600px;
+        }
+        
+        .analysis-notes {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            padding: 15px;
+            font-size: 11px;
+            color: #888;
+            font-family: monospace;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .theme-frame:hover .analysis-notes {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 200;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 10px;
+        }
+        
+        .btn:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CURATIONS THEME ANALYSIS</h1>
+        <div class="timestamp">MONDAY AUGUST 26TH 2025 - 3:23AM LA TIME</div>
+        <div class="timestamp">⚠️ DUPLICATE ELEMENTS EXPECTED FROM PREVIOUS LLM</div>
+    </div>
+    
+    <div class="grid-container">
+        <!-- THEME 1: BASKETBALL -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 1 - Unknown Content</h2>
+                <div class="filename">basketball-raw.html</div>
+                <div class="status">⚠️ May contain duplicates</div>
+            </div>
+            <iframe src="./theme-previews/basketball-raw.html"></iframe>
+            <div class="analysis-notes">
+                ANALYSIS PENDING:
+                - Check for duplicate headers
+                - Identify actual theme purpose
+                - Note salvageable components
+                - Document CSS conflicts
+            </div>
+        </div>
+        
+        <!-- THEME 2: TENNIS -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 2 - Unknown Content</h2>
+                <div class="filename">tennis-raw.html</div>
+                <div class="status">⚠️ May contain duplicates</div>
+            </div>
+            <iframe src="./theme-previews/tennis-raw.html"></iframe>
+            <div class="analysis-notes">
+                ANALYSIS PENDING:
+                - Check for duplicate headers
+                - Identify actual theme purpose
+                - Note salvageable components
+                - Document CSS conflicts
+            </div>
+        </div>
+        
+        <!-- THEME 3: GOLF -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 3 - Unknown Content</h2>
+                <div class="filename">golf-raw.html</div>
+                <div class="status">⚠️ May contain duplicates</div>
+            </div>
+            <iframe src="./theme-previews/golf-raw.html"></iframe>
+            <div class="analysis-notes">
+                ANALYSIS PENDING:
+                - Check for duplicate headers
+                - Identify actual theme purpose
+                - Note salvageable components
+                - Document CSS conflicts
+            </div>
+        </div>
+        
+        <!-- THEME 4: SOCCER -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 4 - Unknown Content</h2>
+                <div class="filename">soccer-raw.html</div>
+                <div class="status">⚠️ May contain duplicates</div>
+            </div>
+            <iframe src="./theme-previews/soccer-raw.html"></iframe>
+            <div class="analysis-notes">
+                ANALYSIS PENDING:
+                - Check for duplicate headers
+                - Identify actual theme purpose
+                - Note salvageable components
+                - Document CSS conflicts
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="location.reload()">Refresh All</button>
+        <button class="btn" onclick="toggleNotes()">Toggle Notes</button>
+    </div>
+    
+    <script>
+        // Auto-refresh every 30 seconds to catch updates
+        setTimeout(() => {
+            console.log('Auto-refreshing themes...');
+            location.reload();
+        }, 30000);
+        
+        function toggleNotes() {
+            const notes = document.querySelectorAll('.analysis-notes');
+            notes.forEach(note => {
+                note.style.display = note.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+        
+        // Log load status
+        window.addEventListener('load', () => {
+            console.log('Theme comparison grid loaded');
+            console.log('Timestamp: MONDAY AUGUST 26TH 2025 - 3:23AM LA TIME');
+        });
+    </script>
+</body>
+</html>
