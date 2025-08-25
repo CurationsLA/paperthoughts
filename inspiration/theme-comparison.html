@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURATIONS - Theme Analysis Grid (Inspiration)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+            overflow-x: auto;
+        }
+        
+        .header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            font-size: 12px;
+            opacity: 0.8;
+            font-family: monospace;
+        }
+        
+        .breadcrumb {
+            background: #1a1a1a;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #ccc;
+            border-bottom: 1px solid #333;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: #222;
+            padding: 2px;
+            min-height: calc(100vh - 140px);
+        }
+        
+        .theme-frame {
+            background: #111;
+            position: relative;
+            min-height: 500px;
+            border: 1px solid #333;
+        }
+        
+        .theme-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.9);
+            padding: 10px;
+            z-index: 10;
+            border-bottom: 1px solid #333;
+        }
+        
+        .theme-label h2 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .theme-label .filename {
+            font-size: 11px;
+            color: #666;
+            font-family: monospace;
+        }
+        
+        .theme-label .status {
+            font-size: 10px;
+            color: #f39c12;
+            margin-top: 5px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #fff;
+            min-height: 500px;
+            margin-top: 60px;
+        }
+        
+        .analysis-notes {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            padding: 15px;
+            font-size: 11px;
+            color: #888;
+            font-family: monospace;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .theme-frame:hover .analysis-notes {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .navigation {
+            background: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid #667eea;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CURATIONS THEME ANALYSIS GRID</h1>
+        <div class="timestamp">NESTED INSPIRATION STRUCTURE</div>
+        <div class="timestamp">⚠️ RAW THEME PLACEHOLDERS - PARALLEL EVOLUTION TRACK</div>
+    </div>
+    
+    <div class="breadcrumb">
+        <a href="../previews/comparison.html">← Flat Preview Structure</a> | 
+        inspiration/theme-comparison.html | 
+        <span style="color: #666;">Side-by-side evolution until canonical structure decided</span>
+    </div>
+    
+    <div class="navigation">
+        <div style="color: #ccc; font-size: 14px;">
+            Nested Structure - References: ./theme-previews/*-raw.html
+        </div>
+        <a href="../previews/comparison.html" class="nav-link">Switch to Flat Structure</a>
+    </div>
+    
+    <div class="grid-container">
+        <!-- THEME 1: BASKETBALL -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 1 - Basketball (Raw)</h2>
+                <div class="filename">basketball-raw.html</div>
+                <div class="status">📝 Placeholder - nested structure</div>
+            </div>
+            <iframe src="./theme-previews/basketball-raw.html"></iframe>
+            <div class="analysis-notes">
+                NESTED PLACEHOLDER STATUS:
+                - Mirroring flat structure for parallel evolution
+                - Ready for raw theme HTML content
+                - Will compare nested vs flat organization
+                - Future: consolidate to single canonical structure
+            </div>
+        </div>
+        
+        <!-- THEME 2: TENNIS -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 2 - Tennis (Raw)</h2>
+                <div class="filename">tennis-raw.html</div>
+                <div class="status">📝 Placeholder - nested structure</div>
+            </div>
+            <iframe src="./theme-previews/tennis-raw.html"></iframe>
+            <div class="analysis-notes">
+                NESTED PLACEHOLDER STATUS:
+                - Mirroring flat structure for parallel evolution
+                - Ready for raw theme HTML content
+                - Will compare nested vs flat organization
+                - Future: consolidate to single canonical structure
+            </div>
+        </div>
+        
+        <!-- THEME 3: GOLF -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 3 - Golf (Raw)</h2>
+                <div class="filename">golf-raw.html</div>
+                <div class="status">📝 Placeholder - nested structure</div>
+            </div>
+            <iframe src="./theme-previews/golf-raw.html"></iframe>
+            <div class="analysis-notes">
+                NESTED PLACEHOLDER STATUS:
+                - Mirroring flat structure for parallel evolution
+                - Ready for raw theme HTML content
+                - Will compare nested vs flat organization
+                - Future: consolidate to single canonical structure
+            </div>
+        </div>
+        
+        <!-- THEME 4: SOCCER -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 4 - Soccer (Raw)</h2>
+                <div class="filename">soccer-raw.html</div>
+                <div class="status">📝 Placeholder - nested structure</div>
+            </div>
+            <iframe src="./theme-previews/soccer-raw.html"></iframe>
+            <div class="analysis-notes">
+                NESTED PLACEHOLDER STATUS:
+                - Mirroring flat structure for parallel evolution
+                - Ready for raw theme HTML content
+                - Will compare nested vs flat organization
+                - Future: consolidate to single canonical structure
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="location.reload()">Refresh All</button>
+        <button class="btn" onclick="toggleNotes()">Toggle Notes</button>
+    </div>
+    
+    <script>
+        // Auto-refresh every 30 seconds to catch updates
+        setTimeout(() => {
+            console.log('Auto-refreshing nested theme grid...');
+            location.reload();
+        }, 30000);
+        
+        function toggleNotes() {
+            const notes = document.querySelectorAll('.analysis-notes');
+            notes.forEach(note => {
+                note.style.display = note.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+        
+        // Log load status
+        window.addEventListener('load', () => {
+            console.log('Nested theme comparison grid loaded');
+            console.log('Structure: inspiration/theme-comparison.html');
+        });
+    </script>
+</body>
+</html>
