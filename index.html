@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CURATIONS Theme Portal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root {
+      --bg:#0d0f13; --card:#171b22; --accent:#ff9c33; --accent-soft:#ffcf9a; --text:#e8edf2; --muted:#9aa4b1; --border:#252c36; --focus:#ffc477;
+      --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:System-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+    header { padding:2.5rem 1.5rem 1.25rem; text-align:center; }
+    h1 { margin:0 0 .5rem; font-size:clamp(1.9rem,4vw,2.6rem); background:linear-gradient(90deg,var(--accent),var(--accent-soft)); -webkit-background-clip:text; color:transparent; }
+    p.lead { margin:.25rem auto 0; max-width:56ch; font-size:1.05rem; line-height:1.4; color:var(--muted); }
+    main { max-width:1080px; margin:0 auto; padding:0 1.25rem 4rem; display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+    section.card { background:var(--card); border:1px solid var(--border); padding:1.1rem 1rem 1.25rem; border-radius:14px; display:flex; flex-direction:column; gap:.65rem; position:relative; overflow:hidden; }
+    section.card:focus-within, section.card:hover { border-color:var(--accent); }
+    h2 { font-size:1.05rem; letter-spacing:.5px; text-transform:uppercase; margin:0; font-weight:600; display:flex; align-items:center; gap:.4rem; }
+    h2 span.tag { font-size:.6rem; background:var(--accent); color:#231400; padding:.15rem .45rem; border-radius:4px; font-weight:600; letter-spacing:.5px; }
+    ul.links { list-style:none; margin:.25rem 0 0; padding:0; display:flex; flex-direction:column; gap:.35rem; }
+    ul.links li a { text-decoration:none; color:var(--accent-soft); font-weight:500; display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .35rem; border-radius:6px; line-height:1.2; }
+    ul.links li a:focus, ul.links li a:hover { background:#202833; color:var(--accent); outline:0; }
+    a.inline { color:var(--accent-soft); }
+    a.inline:hover { color:var(--accent); }
+    code { font-family:var(--mono); font-size:.8rem; background:#1f2630; padding:.15rem .4rem; border-radius:4px; color:var(--accent-soft); }
+    footer { max-width:960px; margin:2.5rem auto 2rem; padding:0 1.25rem; font-size:.75rem; color:var(--muted); line-height:1.4; }
+    .note { font-size:.7rem; text-transform:uppercase; letter-spacing:.8px; font-weight:600; color:var(--muted); }
+    .future { opacity:.55; }
+    .future ul.links li a { pointer-events:none; cursor:default; }
+    @media (prefers-reduced-motion:no-preference) {
+      section.card { transition:border-color .35s, background-color .35s; }
+      ul.links li a { transition:background-color .3s,color .3s; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CURATIONS Theme Portal</h1>
+    <p class="lead">Bookmark this page. It is the single entry to every raw theme preview, comparison surface, and analysis document. No floating dev toolbar required.</p>
+  </header>
+  <main>
+    <section class="card" aria-labelledby="comparison-flat">
+      <h2 id="comparison-flat">Comparison (Flat)</h2>
+      <p class="note">Iframe dashboard (raw set)</p>
+      <ul class="links">
+        <li><a href="previews/comparison.html">Open Flat Comparison</a></li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="raw-flat">
+      <h2 id="raw-flat">Raw Themes (Flat)</h2>
+      <ul class="links">
+        <li><a href="previews/basketball.html">Basketball (raw)</a></li>
+        <li><a href="previews/tennis.html">Tennis (raw)</a></li>
+        <li><a href="previews/golf.html">Golf (raw)</a></li>
+        <li><a href="previews/soccer.html">Soccer (raw)</a></li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="comparison-nested">
+      <h2 id="comparison-nested">Comparison (Nested)</h2>
+      <p class="note">Parallel structure under inspiration/</p>
+      <ul class="links">
+        <li><a href="inspiration/theme-comparison.html">Open Nested Comparison</a></li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="raw-nested">
+      <h2 id="raw-nested">Raw Themes (Nested)</h2>
+      <ul class="links">
+        <li><a href="inspiration/theme-previews/basketball-raw.html">Basketball (nested raw)</a></li>
+        <li><a href="inspiration/theme-previews/tennis-raw.html">Tennis (nested raw)</a></li>
+        <li><a href="inspiration/theme-previews/golf-raw.html">Golf (nested raw)</a></li>
+        <li><a href="inspiration/theme-previews/soccer-raw.html">Soccer (nested raw)</a></li>
+      </ul>
+    </section>
+    <section class="card future" aria-labelledby="clean-future">
+      <h2 id="clean-future">Clean Variants <span class="tag">Soon</span></h2>
+      <p class="note">Will appear after refactor & dedupe</p>
+      <ul class="links">
+        <li><a href="#">Basketball (clean)</a></li>
+        <li><a href="#">Tennis (clean)</a></li>
+        <li><a href="#">Golf (clean)</a></li>
+        <li><a href="#">Soccer (clean)</a></li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="analysis-docs">
+      <h2 id="analysis-docs">Analysis & Docs</h2>
+      <ul class="links">
+        <li><a href="THEME-ANALYSIS.md">Theme Analysis (scaffold)</a></li>
+        <li><a href="README-PAGES-NOTE.md">Pages Deployment Note</a></li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="workflow-next">
+      <h2 id="workflow-next">Workflow Notes</h2>
+      <ul class="links">
+        <li><a href="previews/comparison.html#">Toggle (future) Raw vs Clean</a></li>
+        <li><a href="inspiration/theme-comparison.html#">Nested vs Flat Comparison</a></li>
+      </ul>
+      <p style="font-size:.75rem; line-height:1.35; color:var(--muted);">After real HTML insertion: populate analysis, generate clean versions, enable toggles, then decide on canonical directory and prune duplicates.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Portal generated as part of initial scaffold. Update freely as themes evolve. No build step required; static HTML only.</p>
+  </footer>
+</body>
+</html>
