@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURATIONS - Theme Preview Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+            overflow-x: auto;
+        }
+        
+        .header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            font-size: 12px;
+            opacity: 0.8;
+            font-family: monospace;
+        }
+        
+        .toolbar {
+            background: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        .toolbar-label {
+            color: #ccc;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .toggle-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        
+        .toggle-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .toggle-btn.active {
+            background: #4CAF50;
+        }
+        
+        .toggle-btn:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: #222;
+            padding: 2px;
+            min-height: calc(100vh - 120px);
+        }
+        
+        .theme-frame {
+            background: #111;
+            position: relative;
+            min-height: 500px;
+            border: 1px solid #333;
+        }
+        
+        .theme-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.9);
+            padding: 10px;
+            z-index: 10;
+            border-bottom: 1px solid #333;
+        }
+        
+        .theme-label h2 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .theme-label .filename {
+            font-size: 11px;
+            color: #666;
+            font-family: monospace;
+        }
+        
+        .theme-label .status {
+            font-size: 10px;
+            color: #f39c12;
+            margin-top: 5px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #fff;
+            min-height: 500px;
+            margin-top: 60px;
+        }
+        
+        .analysis-notes {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            padding: 15px;
+            font-size: 11px;
+            color: #888;
+            font-family: monospace;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .theme-frame:hover .analysis-notes {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CURATIONS THEME PREVIEW DASHBOARD</h1>
+        <div class="timestamp">FLAT PREVIEW STRUCTURE</div>
+        <div class="timestamp">⚠️ RAW THEME PLACEHOLDERS - AWAITING REAL CONTENT</div>
+    </div>
+    
+    <div class="toolbar">
+        <div class="toolbar-label">View:</div>
+        <button class="toggle-btn active" id="rawBtn" onclick="switchToRaw()">Raw Themes</button>
+        <button class="toggle-btn" id="cleanBtn" onclick="switchToClean()" disabled>Clean Themes</button>
+        <div class="toolbar-label" style="margin-left: 20px; color: #666;">
+            Clean variants coming soon...
+        </div>
+    </div>
+    
+    <div class="grid-container">
+        <!-- THEME 1: BASKETBALL -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 1 - Basketball</h2>
+                <div class="filename">basketball.html</div>
+                <div class="status">📝 Placeholder - awaiting real content</div>
+            </div>
+            <iframe src="./basketball.html"></iframe>
+            <div class="analysis-notes">
+                PLACEHOLDER STATUS:
+                - Ready for raw theme HTML content
+                - Will analyze for duplicates once populated
+                - Prepared for clean variant extraction
+                - Future: compare raw vs clean side-by-side
+            </div>
+        </div>
+        
+        <!-- THEME 2: TENNIS -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 2 - Tennis</h2>
+                <div class="filename">tennis.html</div>
+                <div class="status">📝 Placeholder - awaiting real content</div>
+            </div>
+            <iframe src="./tennis.html"></iframe>
+            <div class="analysis-notes">
+                PLACEHOLDER STATUS:
+                - Ready for raw theme HTML content
+                - Will analyze for duplicates once populated
+                - Prepared for clean variant extraction
+                - Future: compare raw vs clean side-by-side
+            </div>
+        </div>
+        
+        <!-- THEME 3: GOLF -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 3 - Golf</h2>
+                <div class="filename">golf.html</div>
+                <div class="status">📝 Placeholder - awaiting real content</div>
+            </div>
+            <iframe src="./golf.html"></iframe>
+            <div class="analysis-notes">
+                PLACEHOLDER STATUS:
+                - Ready for raw theme HTML content
+                - Will analyze for duplicates once populated
+                - Prepared for clean variant extraction
+                - Future: compare raw vs clean side-by-side
+            </div>
+        </div>
+        
+        <!-- THEME 4: SOCCER -->
+        <div class="theme-frame">
+            <div class="theme-label">
+                <h2>Theme 4 - Soccer</h2>
+                <div class="filename">soccer.html</div>
+                <div class="status">📝 Placeholder - awaiting real content</div>
+            </div>
+            <iframe src="./soccer.html"></iframe>
+            <div class="analysis-notes">
+                PLACEHOLDER STATUS:
+                - Ready for raw theme HTML content
+                - Will analyze for duplicates once populated
+                - Prepared for clean variant extraction
+                - Future: compare raw vs clean side-by-side
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="location.reload()">Refresh All</button>
+        <button class="btn" onclick="toggleNotes()">Toggle Notes</button>
+    </div>
+    
+    <script>
+        let currentMode = 'raw';
+        
+        function switchToRaw() {
+            currentMode = 'raw';
+            document.getElementById('rawBtn').classList.add('active');
+            document.getElementById('cleanBtn').classList.remove('active');
+            
+            // Update iframe sources to raw versions
+            const iframes = document.querySelectorAll('iframe');
+            iframes[0].src = './basketball.html';
+            iframes[1].src = './tennis.html';
+            iframes[2].src = './golf.html';
+            iframes[3].src = './soccer.html';
+            
+            console.log('Switched to raw theme view');
+        }
+        
+        function switchToClean() {
+            // Will be implemented when clean variants are ready
+            console.log('Clean variants not yet available');
+        }
+        
+        function toggleNotes() {
+            const notes = document.querySelectorAll('.analysis-notes');
+            notes.forEach(note => {
+                note.style.display = note.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+        
+        // Auto-refresh every 5 minutes to catch updates
+        setTimeout(() => {
+            console.log('Auto-refreshing preview dashboard...');
+            location.reload();
+        }, 300000);
+        
+        // Log load status
+        window.addEventListener('load', () => {
+            console.log('Theme preview dashboard loaded');
+            console.log('Current mode:', currentMode);
+        });
+    </script>
+</body>
+</html>
