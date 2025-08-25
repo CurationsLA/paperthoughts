@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Theme Comparison – CURATIONS (Flat previews)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root {
+      --bg:#111;
+      --panel:#1c1c1c;
+      --border:#2f2f2f;
+      --accent:#ff3fd3;
+      --radius:10px;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, sans-serif; background:var(--bg); color:#eee; }
+    header { padding:1.2rem 1.5rem 0.4rem; }
+    h1 { margin:0 0 .25rem; font-size:clamp(1.7rem,2.2vw + 1rem,3.1rem); letter-spacing:-.5px; }
+    p.lead { margin:.25rem 0 0; font-size:.85rem; opacity:.7; max-width:780px; line-height:1.4; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:.6rem; margin:1rem 0 0; }
+    .toolbar button { background:var(--panel); color:#ddd; border:1px solid var(--border); padding:.45rem .75rem; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; border-radius:4px; cursor:pointer; }
+    .toolbar button.active { outline:2px solid var(--accent); color:#fff; }
+    main { padding:1rem 1.25rem 2rem; }
+    .grid { display:grid; gap:1rem; }
+    @media (min-width:1300px){ .grid { grid-template-columns:repeat(4,1fr); } }
+    @media (min-width:900px) and (max-width:1299px){ .grid { grid-template-columns:repeat(2,1fr); } }
+    .card { background:var(--panel); padding:.75rem .85rem 1rem; border:1px solid var(--border); display:flex; flex-direction:column; gap:.65rem; border-radius:var(--radius); box-shadow:0 0 0 1px #000, 0 4px 16px -6px rgba(0,0,0,.55); position:relative; }
+    .meta { font-size:.58rem; letter-spacing:.1em; opacity:.65; font-weight:600; text-transform:uppercase; }
+    .filename { font-weight:600; font-size:.8rem; }
+    iframe { width:100%; background:#fff; border:2px solid #000; aspect-ratio:9/16; border-radius:6px; }
+    .notes { font-size:.6rem; line-height:1.2; opacity:.85; min-height:2.4em; }
+    footer { margin-top:2rem; text-align:center; font-size:.65rem; opacity:.5; }
+    .badge { position:absolute; top:.55rem; right:.6rem; font-size:.5rem; background:#000; color:#fff; padding:.25rem .4rem; border:1px solid var(--border); border-radius:4px; letter-spacing:.08em; }
+    .hidden { display:none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CURATIONS — Theme Comparison (Raw / Flat)</h1>
+    <p class="lead">Four raw themes displayed via iframes. Use the view toggle to compare RAW vs (future) CLEAN when available. This page lives at /previews/comparison.html in the repository.</p>
+    <div class="toolbar">
+      <button data-view="raw" class="active">Raw</button>
+      <button data-view="clean" disabled title="Clean variants not created yet">Clean (pending)</button>
+    </div>
+  </header>
+  <main>
+    <div class="grid" id="themeGrid">
+      <div class="card" data-theme="basketball">
+        <span class="badge">RAW</span>
+        <div class="meta">Theme 1</div>
+        <div class="filename">basketball.html</div>
+        <iframe src="./basketball.html" title="basketball"></iframe>
+        <div class="notes">Pending analysis (duplicates, structure, inline CSS).</div>
+      </div>
+      <div class="card" data-theme="tennis">
+        <span class="badge">RAW</span>
+        <div class="meta">Theme 2</div>
+        <div class="filename">tennis.html</div>
+        <iframe src="./tennis.html" title="tennis"></iframe>
+        <div class="notes">Pending analysis.</div>
+      </div>
+      <div class="card" data-theme="golf">
+        <span class="badge">RAW</span>
+        <div class="meta">Theme 3</div>
+        <div class="filename">golf.html</div>
+        <iframe src="./golf.html" title="golf"></iframe>
+        <div class="notes">Pending analysis.</div>
+      </div>
+      <div class="card" data-theme="soccer">
+        <span class="badge">RAW</span>
+        <div class="meta">Theme 4</div>
+        <div class="filename">soccer.html</div>
+        <iframe src="./soccer.html" title="soccer"></iframe>
+        <div class="notes">Pending analysis.</div>
+      </div>
+    </div>
+  </main>
+  <footer>CURATIONS Raw Theme Preview Scaffold • Flat Structure</footer>
+  <script>
+    document.querySelectorAll('.toolbar button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        document.querySelectorAll('.toolbar button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.dataset.view;
+        console.log('Switched view mode:', mode);
+      });
+    });
+  </script>
+</body>
+</html>
